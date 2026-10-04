@@ -1,0 +1,165 @@
+/* Hover Lab starter: the layout is done. Write your code under each YOUR CODE comment. */
+
+/* Colors and spacing are set for you. You do not need to change them. */
+:root {
+  --primary-color: #1D4E89;
+  --secondary-color: #1A787C;
+  --contrast-color: #E8B873;
+  --triadic-color: #A62A61;
+  --extra-color: #F5F2EA;
+
+  --radius: 1rem;
+  --space-small: 0.5rem;
+  --space: 1rem;
+  --space-big: 2rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  color: var(--primary-color);
+  background: var(--extra-color);
+}
+
+.site-header,
+.site-footer {
+  padding: var(--space) var(--space);
+  text-align: center;
+  color: var(--extra-color);
+  background: var(--primary-color);
+}
+
+.page {
+  display: grid;
+  gap: var(--space-big);
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: var(--space-big) var(--space);
+}
+
+.lab {
+  padding: var(--space);
+  border-radius: var(--radius);
+  background: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ---------- Lab 1: States ---------- */
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space);
+}
+
+.state-button {
+  padding: var(--space-small) var(--space);
+  border: none;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  background: var(--contrast-color);
+  cursor: pointer;
+}
+
+.state-link {
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+/* YOUR CODE: Lab 1 states (:hover, :focus-visible, :active) */
+
+
+
+
+/* ---------- Lab 2: The Timing Race ---------- */
+.race {
+  display: grid;
+  gap: var(--space-small);
+  padding: var(--space-small);
+  border-radius: var(--radius);
+  background: #EEEEEE;
+}
+
+.racer {
+  width: 8rem;
+  padding: var(--space-small);
+  border-radius: var(--space-small);
+  font-weight: bold;
+  color: var(--extra-color);
+  background: var(--secondary-color);
+  transition: width 2s;
+}
+
+/* Hovering the track makes every racer run to the finish line */
+.race:hover .racer {
+  width: 100%;
+}
+
+/* YOUR CODE: Lab 2 timing functions (one per racer) */
+
+
+
+
+/* ---------- Lab 3: Transform Tiles ---------- */
+.tile-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space);
+}
+
+.tile {
+  display: grid;
+  place-items: center;
+  min-height: 8rem;
+  border-radius: var(--radius);
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--extra-color);
+  background: var(--triadic-color);
+}
+
+/* YOUR CODE: Lab 3 transforms (lift, grow, spin, tilt) */
+
+
+
+
+/* ---------- Lab 4: My Hover Gallery ---------- */
+.gallery {
+  display: grid;
+  gap: var(--space);
+}
+
+.effect-card {
+  display: grid;
+  place-items: center;
+  min-height: 9rem;
+  border-radius: var(--radius);
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--primary-color);
+  background: var(--extra-color);
+  border: 2px solid #DDDDDD;
+}
+
+/* YOUR CODE: Lab 4, six effects */
+
+
+
+/* ---------- PC: 1024px and up ---------- */
+@media (min-width: 1024px) {
+  .tile-row {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
