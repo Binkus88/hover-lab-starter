@@ -7,6 +7,7 @@
   --contrast-color: #E8B873;
   --triadic-color: #A62A61;
   --extra-color: #F5F2EA;
+  --focus-ring-color: #A62A61;
 
   --radius: 1rem;
   --space-small: 0.5rem;
@@ -57,7 +58,7 @@ body {
   gap: var(--space);
 }
 
-.state-button {
+.state-button{
   padding: var(--space-small) var(--space);
   border: none;
   border-radius: 999px;
@@ -73,9 +74,33 @@ body {
   color: var(--secondary-color);
 }
 
+.state-button:hover, .state-button:focus {
+  padding: var(--space-small) var(--space);
+  border: none;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--extra-color);
+  background: var(--primary-color);
+  cursor: pointer;
+}
+
+.state-button:focus-visible {
+  outline: 3px solid var(--triadic-color);
+  outline-offset:4px;
+}
+
+/* Pressed: keep this AFTER the :hover rule */
+.state-button:active{
+  transform: scale(0.92); 
+  /* you will learn scale in Part 3 */
+}
 /* YOUR CODE: Lab 1 states (:hover, :focus-visible, :active) */
 
-
+.state-button,
+.state-link {
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.15s ease;
+}
 
 
 /* ---------- Lab 2: The Timing Race ---------- */
@@ -103,7 +128,24 @@ body {
 }
 
 /* YOUR CODE: Lab 2 timing functions (one per racer) */
-
+.racer-linear{
+  transition-timing-function: linear;
+}
+.racer-ease{
+  transition-timing-function: ease;
+}
+.racer-ease-in{
+  transition-timing-function: ease-in;
+}
+.racer-ease-out{
+  transition-timing-function: ease-out;
+}
+.racer-ease-in-out{
+  transition-timing-function: ease-in-out;
+}
+.racer-mine{
+  transition-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
 
 
 
@@ -128,7 +170,21 @@ body {
 
 /* YOUR CODE: Lab 3 transforms (lift, grow, spin, tilt) */
 
-
+.tile{
+  transition: transform 0.4s ease;
+}
+.tile-lift:hover, .tile-lift:focus-visible {
+  transform: translateY(-10px);
+}
+.tile-grow:hover, .tile-grow:focus-visible {
+  transform: scale(1.1);
+}
+.tile-spin:hover, .tile-spin:focus-visible {
+  transform: rotate(720deg);
+}
+.tile-tilt:hover, .tile-tilt:focus-visible {
+  transform: rotate(10deg);
+}
 
 
 /* ---------- Lab 4: My Hover Gallery ---------- */
@@ -148,9 +204,40 @@ body {
   background: var(--extra-color);
   border: 2px solid #DDDDDD;
 }
-
+ 
 /* YOUR CODE: Lab 4, six effects */
-
+.effect-card{
+  transition: transform 0.4s ease;
+}
+.effect-1:hover, .effect-1:focus-visible {
+  border-color: black;
+  border-width: 50px;
+  box-shadow: 10px 5px 5px gold;
+}
+.effect-2:hover, .effect-2:focus-visible {
+  transform: scale(0.7);
+  border-color :var(--triadic-color);
+  border-width:5px;
+}
+.effect-3:hover, .effect-3:focus-visible{
+  transform: scale(1.2);
+  border-color: var(--triadic-color);
+  border-width: 5px;
+}
+.effect-4:hover, .effect-4:focus-visible {
+  transform: scaleX(1.2) scaleY(0.5) rotate(360deg);
+}
+.effect-5:hover, .effect-5:focus-visible {
+  border-color: var(--triadic-color);
+  border-width: 5px;
+  transform: translateY(-10px);
+  box-shadow: 5px 5px teal;
+}
+.effect-6:hover, .effect-6:focus-visible {
+  transform: border-radius: 8000px;
+  border-color:var(--primary-color);
+  transform: scale(1.05);
+}
 
 
 /* ---------- PC: 1024px and up ---------- */
